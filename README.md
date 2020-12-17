@@ -1,6 +1,6 @@
 # DRF Skeleton
 
-replace all instances of `drf_skeleton` or `drf-skeleton` with you app's name.
+replace all instances of `drf_message_bouncer` or `drf-message-bouncer` with you app's name.
 
 ```
 pip install -r requirements.txt

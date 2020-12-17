@@ -1,5 +1,5 @@
 """
-WSGI config for drf_skeleton project.
+WSGI config for drf_message_bouncer project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "drf_skeleton.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "drf_message_bouncer.settings")
 
 application = get_wsgi_application()

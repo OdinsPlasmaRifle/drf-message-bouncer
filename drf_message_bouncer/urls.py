@@ -11,9 +11,9 @@ admin.autodiscover()
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="DRF Skeleton API",
+      title="DRF Message Bouncer API",
       default_version='v1',
-      description="DRF Skeleton API"
+      description="DRF Message Bouncer API"
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),

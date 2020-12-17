@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'drf_yasg',
-    'drf_skeleton',
+    'drf_message_bouncer',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +36,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'drf_skeleton.urls'
+ROOT_URLCONF = 'drf_message_bouncer.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'drf_skeleton.wsgi.application'
+WSGI_APPLICATION = 'drf_message_bouncer.wsgi.application'
 
 
 # Database
