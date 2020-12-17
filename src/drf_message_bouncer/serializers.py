@@ -72,6 +72,11 @@ class CreateMessageSerializer(MessageSerializer):
     def validate(self, validated_data):
         session = validated_data.get("session")
 
+        if validated_data.get("parent") and validated_data.get("message"):
+            raise serializers.ValidationError(
+                {"message": ["Cannot inlcude a parent and message."]}
+            )
+
         # Check if a parent is included.
         if  validated_data.get("parent"):
             # An original value is set on the parent.
@@ -80,6 +85,8 @@ class CreateMessageSerializer(MessageSerializer):
             # The parent is the original.
             else:
                 validated_data["original"] = validated_data["parent"]
+
+            validated_data["message"] = validated_data["original"].message
 
         if validated_data.get("parent") and Message.objects.filter(
                 session=session, original=validated_data.get("original")).exists():

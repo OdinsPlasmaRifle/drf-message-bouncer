@@ -37,7 +37,7 @@ class ListCreateMessageView(ListCreateAPIView):
 
         return Message.objects.filter(
             Q(session=session) | Q(id__in=message_ids)
-        ).order_by('created')
+        ).order_by('-created')
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
