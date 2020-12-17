@@ -1,0 +1,6 @@
+Django==2.2.4
+django-cors-headers==2.4.0
+djangorestframework==3.9.3
+drf-yasg==1.15.0
+gunicorn==19.9.0
+psycopg2==2.7.5
