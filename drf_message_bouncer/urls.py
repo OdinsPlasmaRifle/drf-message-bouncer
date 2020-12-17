@@ -42,13 +42,18 @@ urlpatterns = [
 
     # API
     re_path(
-      r'^example-models/?$',
-      views.ListExampleModelView.as_view(),
-      name='example-model-list'
+      r'^messages/?$',
+      views.ListCreateMessageView.as_view(),
+      name='message-list'
     ),
     re_path(
-      r'^example-models/(?P<id>\d+)/?$',
-      views.RetrieveExampleModelView.as_view(),
-      name='example-model-view'
+      r'^messages/(?P<id>\d+)/?$',
+      views.RetrieveMessageView.as_view(),
+      name='message-view'
+    ),
+    re_path(
+      r'^sessions/?$',
+      views.CreateSessionView.as_view(),
+      name='session-view'
     ),
 ]
