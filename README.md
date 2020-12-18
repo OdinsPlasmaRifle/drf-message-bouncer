@@ -49,7 +49,10 @@ This project can be run in production using docker.
 
 Ensure that you run docker as a non-root user who is part of the `docker` group.
 
-Also, update the `.env` file to have values appropriate for production usage.
+1. Create a user: `sudo useradd -s /bin/bash -m username`
+2. Attach the user to the docker group: `sudo usermod -aG docker username`
+
+Also, update the `.env` file to have values appropriate for production usage. 
 
 To run the docker containers, enter the following commands:
 
