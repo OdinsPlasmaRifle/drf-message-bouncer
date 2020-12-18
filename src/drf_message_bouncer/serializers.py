@@ -40,6 +40,7 @@ class MessageSerializer(serializers.ModelSerializer):
 
 class CreateMessageSerializer(MessageSerializer):
     parent = serializers.CharField(required=False)
+    message = serializers.CharField(required=False)
     session = serializers.CharField()
 
     class Meta:
