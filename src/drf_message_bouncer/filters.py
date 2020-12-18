@@ -16,15 +16,21 @@ class MessageFilterSet(filters.FilterSet):
             'id': ['exact',],
         }
 
-    def broadcasted(self, queryset, name, value):
+    def filter_broadcasted(self, queryset, name, value):
         if value in TRUE_VALUES:
             pass
             # queryset.filter(
             #     message__parent_children__session=self.request.session
             # )
         elif value in FALSE_VALUES:
-            queryset.exclude(
-                message__parent_children__session=self.request.session
+            broadcasted_messages = Message.objects.filter(
+                parent__isnull=False,
+                session=self.request.session
+            ).values_list('original_id', flat=True)
+
+            queryset = queryset.exclude(
+                id__in=broadcasted_messages,
+                original_id__in=broadcasted_messages
             )
 
         return queryset

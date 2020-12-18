@@ -32,6 +32,8 @@ class ListCreateMessageView(ListCreateAPIView):
             session = Session.objects.get(identifier=self.request.GET.get("session"))
         except Session.DoesNotExist:
             raise exceptions.PermissionDenied
+        else:
+            self.request.session = session
 
         message_ids = Message.objects.in_range(session.latitude, session.longitude, 5000)
 
