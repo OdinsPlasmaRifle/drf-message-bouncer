@@ -1,4 +1,5 @@
 from django_filters import rest_framework as filters
+from django.db.models import Q
 
 from drf_message_bouncer.models import Message
 
@@ -29,8 +30,8 @@ class MessageFilterSet(filters.FilterSet):
             ).values_list('original_id', flat=True)
 
             queryset = queryset.exclude(
-                id__in=broadcasted_messages,
-                original_id__in=broadcasted_messages
+                Q(id__in=broadcasted_messages)
+                    | Q(original_id__in=broadcasted_messages)
             )
 
         return queryset
