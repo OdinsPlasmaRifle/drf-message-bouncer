@@ -26,7 +26,6 @@ services:
     networks:
       - main
     depends_on:
-      - rabbitmq
       - postgres
 
   postgres:
