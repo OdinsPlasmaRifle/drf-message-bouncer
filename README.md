@@ -44,6 +44,9 @@ The django server will be served on: http://localhost:8000
 
 This project can be run in production using docker.
 
+1. Install docker: https://docs.docker.com/engine/install/ubuntu/
+2. Install docker-compose: https://docs.docker.com/compose/install/
+
 Ensure that you run docker as a non-root user who is part of the `docker` group.
 
 Also, update the `.env` file to have values appropriate for production usage.
